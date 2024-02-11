@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mS1sl9YsGOFw6pNhiQpEaqEyD+F+34VJ+6C9kPNyydXGOkexQb3dYlKbaNPkOh+2OQPw6IgXe5vsY0xHYtYQAQ==",
+  "success": true,
+  "projectFilePath": "D:\\source\\track-list\\track-list\\TrackList\\TrackList\\TrackList.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zdlne\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}
