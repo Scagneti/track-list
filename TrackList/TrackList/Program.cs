@@ -6,16 +6,16 @@
 
         var filePath = Console.ReadLine() ?? string.Empty;
 
-        if (filePath != string.Empty)
+        if (!string.IsNullOrEmpty(filePath) && Directory.Exists(filePath))
         {
-            var startingTime = "00:00:00";
+            TimeSpan accumulatedTime = TimeSpan.Zero;
 
             List<TagLib.Tag> fileTags = new();
 
             foreach (var file in Directory.GetFiles(filePath))
             {
                 var audioFile = TagLib.File.Create(file);
-                var tagCollection = TagLib.File.Create(file).Tag;
+                var tagCollection = audioFile.Tag;
 
                 tagCollection.Length = tagCollection.Length ?? audioFile.Properties.Duration.ToString();
 
@@ -28,11 +28,19 @@
                 var title = tag.Title;
                 var trackLength = tag.Length;
 
-                if (trackNumber == 1)
-                {
+                var songStart = accumulatedTime.ToString(@"hh\:mm\:ss");
 
-                }
+                accumulatedTime = accumulatedTime.Add(TimeSpan.Parse(trackLength));
+
+                Console.WriteLine($"{songStart} {title}");
             });
+
+            Console.WriteLine("Track List Successfully Displayed! Press Any Key To Exit.");
+            Console.Read();
+        }
+        else
+        {
+            Console.WriteLine("Invalid directory path or directory does not exist.");
         }
     }
 }
