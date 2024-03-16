@@ -1,0 +1,17 @@
+D:\source\track-list\track-list\TrackList\TrackList\bin\Debug\net6.0\TrackList.exe
+D:\source\track-list\track-list\TrackList\TrackList\bin\Debug\net6.0\TrackList.deps.json
+D:\source\track-list\track-list\TrackList\TrackList\bin\Debug\net6.0\TrackList.runtimeconfig.json
+D:\source\track-list\track-list\TrackList\TrackList\bin\Debug\net6.0\TrackList.dll
+D:\source\track-list\track-list\TrackList\TrackList\bin\Debug\net6.0\TrackList.pdb
+D:\source\track-list\track-list\TrackList\TrackList\bin\Debug\net6.0\TagLibSharp.dll
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.csproj.AssemblyReference.cache
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.AssemblyInfoInputs.cache
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.AssemblyInfo.cs
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.csproj.CoreCompileInputs.cache
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.csproj.CopyComplete
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.dll
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\refint\TrackList.dll
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.pdb
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\TrackList.genruntimeconfig.cache
+D:\source\track-list\track-list\TrackList\TrackList\obj\Debug\net6.0\ref\TrackList.dll
