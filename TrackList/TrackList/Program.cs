@@ -24,14 +24,19 @@
 
         List<TagLib.Tag> fileTags = new();
 
+        string[] audioExtensions = { ".mp3", ".wav", ".flac", ".ogg" };
+
         foreach (var file in Directory.GetFiles(filePath))
         {
-            var audioFile = TagLib.File.Create(file);
-            var tagCollection = audioFile.Tag;
+            if(audioExtensions.Contains(Path.GetExtension(file)))
+            {
+                var audioFile = TagLib.File.Create(file);
+                var tagCollection = audioFile.Tag;
 
-            tagCollection.Length = tagCollection.Length ?? audioFile.Properties.Duration.ToString();
+                tagCollection.Length = tagCollection.Length ?? audioFile.Properties.Duration.ToString();
 
-            fileTags.Add(tagCollection);
+                fileTags.Add(tagCollection);
+            }
         }
 
         fileTags.OrderBy(ft => ft.Track).ToList().ForEach(tag =>
