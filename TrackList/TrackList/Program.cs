@@ -2,45 +2,52 @@
 {
     private static void Main(string[] args)
     {
-        Console.Write("Enter the file path of your album or collection of songs:");
+        string filePath = "";
+        bool validPath = false;
 
-        var filePath = Console.ReadLine() ?? string.Empty;
-
-        if (!string.IsNullOrEmpty(filePath) && Directory.Exists(filePath))
+        while (!validPath)
         {
-            TimeSpan accumulatedTime = TimeSpan.Zero;
+            Console.Write("Enter the file path of your album or collection of songs:");
+            filePath = Console.ReadLine() ?? string.Empty;
 
-            List<TagLib.Tag> fileTags = new();
-
-            foreach (var file in Directory.GetFiles(filePath))
+            if (!string.IsNullOrEmpty(filePath) && Directory.Exists(filePath))
             {
-                var audioFile = TagLib.File.Create(file);
-                var tagCollection = audioFile.Tag;
-
-                tagCollection.Length = tagCollection.Length ?? audioFile.Properties.Duration.ToString();
-
-                fileTags.Add(tagCollection);
+                validPath = true;
             }
-
-            fileTags.OrderBy(ft => ft.Track).ToList().ForEach(tag =>
+            else
             {
-                var trackNumber = tag.Track;
-                var title = tag.Title;
-                var trackLength = tag.Length;
-
-                var songStart = accumulatedTime.ToString(@"hh\:mm\:ss");
-
-                accumulatedTime = accumulatedTime.Add(TimeSpan.Parse(trackLength));
-
-                Console.WriteLine($"{songStart} {title}");
-            });
-
-            Console.WriteLine("Track List Successfully Displayed! Press Any Key To Exit.");
-            Console.Read();
+                Console.WriteLine("Invalid directory path or directory does not exist. Please try again.");
+            }
         }
-        else
+
+        TimeSpan accumulatedTime = TimeSpan.Zero;
+
+        List<TagLib.Tag> fileTags = new();
+
+        foreach (var file in Directory.GetFiles(filePath))
         {
-            Console.WriteLine("Invalid directory path or directory does not exist.");
+            var audioFile = TagLib.File.Create(file);
+            var tagCollection = audioFile.Tag;
+
+            tagCollection.Length = tagCollection.Length ?? audioFile.Properties.Duration.ToString();
+
+            fileTags.Add(tagCollection);
         }
+
+        fileTags.OrderBy(ft => ft.Track).ToList().ForEach(tag =>
+        {
+            var trackNumber = tag.Track;
+            var title = tag.Title;
+            var trackLength = tag.Length;
+
+            var songStart = accumulatedTime.ToString(@"hh\:mm\:ss");
+
+            accumulatedTime = accumulatedTime.Add(TimeSpan.Parse(trackLength));
+
+            Console.WriteLine($"{songStart} {title}");
+        });
+
+        Console.WriteLine("Track List Successfully Displayed! Press Any Key To Exit.");
+        Console.Read();
     }
 }
