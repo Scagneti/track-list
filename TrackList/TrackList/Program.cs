@@ -30,7 +30,7 @@ internal class Program
         {
             if (audioExtensions.Contains(Path.GetExtension(file)))
             {
-                var tag = GetFileTags(audioExtensions, file);
+                var tag = GetFileTags(file);
                 fileTags.Add(tag);
             };
         }
@@ -56,7 +56,7 @@ internal class Program
         });
     }
 
-    private static Tag GetFileTags(string[] audioExtensions, string file)
+    private static Tag GetFileTags(string file)
     {       
         var audioFile = TagLib.File.Create(file);
         var audioFileTags = audioFile.Tag;
