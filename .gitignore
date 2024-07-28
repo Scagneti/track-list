@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WPF-TrackList/WPF-TrackList/obj
+/WPF-TrackList/WPF-TrackList/.vs/WPF-TrackList
+/WPF-TrackList/WpfTracklist
