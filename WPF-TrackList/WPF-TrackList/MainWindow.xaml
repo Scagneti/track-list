@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="trackListOutputTextBox" TextWrapping="Wrap" Text="TrackList Output" Margin="28,10,524,21" IsReadOnly="True"/>
+        <Button x:Name="selectSongsButton" Content="Select Songs" Margin="281,372,425,21" Click="selectSongsButton_Click"/>
 
     </Grid>
 </Window>
