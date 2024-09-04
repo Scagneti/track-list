@@ -10,7 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="line-pattern-background-minimal-style_53876-110613.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="line-pattern-background-minimal-style_53876-110613.jpg" />
   </ItemGroup>
 
 </Project>

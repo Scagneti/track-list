@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="trackListOutputTextBox" TextWrapping="Wrap" Text="TrackList Output" Margin="28,10,524,21" IsReadOnly="True"/>
+        <TextBox x:Name="trackListOutputTextBox" TextWrapping="Wrap" TextBlock.LineStackingStrategy="BlockLineHeight" TextBlock.LineHeight="25"  Text="TrackList Output" Margin="28,10,524,21" IsReadOnly="True" BorderBrush="#FF7691E2" VerticalScrollBarVisibility="Auto">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/line-pattern-background-minimal-style_53876-110613.jpg"/>
+            </TextBox.Background>
+        </TextBox>
         <Button x:Name="selectSongsButton" Content="Select Songs" Margin="281,372,425,21" Click="selectSongsButton_Click"/>
 
     </Grid>
