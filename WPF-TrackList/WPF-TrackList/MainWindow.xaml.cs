@@ -2,6 +2,7 @@
 using System.Windows;
 using TagLib;
 using Path = System.IO.Path;
+using System.Linq;
 
 namespace WPF_TrackList
 {
@@ -33,14 +34,12 @@ namespace WPF_TrackList
             {
                 string[] files = openFileDialog.FileNames;
 
-                foreach (var file in files)
-                {
-                    if (audioExtensions.Contains(Path.GetExtension(file)))
-                    {
-                        var tag = GetFileTags(file);
-                        fileTags.Add(tag);
-                    }
-                }
+                fileTags.Clear();
+
+                fileTags.AddRange(from file in files
+                                  where audioExtensions.Contains(Path.GetExtension(file))
+                                  let tag = GetFileTags(file)
+                                  select tag);
 
                 CreateTrackList(fileTags, accumulatedTime);
             }
